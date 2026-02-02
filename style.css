@@ -1,0 +1,77 @@
+:root {
+    --black: #0a0a0a;
+    --dark: #141414;
+    --orange: #ff6600;
+    --yellow: #ffcc00;
+    --white: #ffffff;
+}
+
+body {
+    margin: 0; background: var(--black); color: var(--white);
+    font-family: 'Exo 2', sans-serif; overflow-x: hidden;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Навигация */
+.navbar {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    background: rgba(10,10,10,0.9); backdrop-filter: blur(10px);
+    padding: 20px 0; border-bottom: 1px solid #222;
+}
+.nav-inner { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 30px; font-weight: 900; cursor: pointer; }
+.logo-accent { color: var(--orange); }
+.nav-menu button {
+    background: none; border: none; color: white; font-weight: 600;
+    margin: 0 15px; cursor: pointer; transition: 0.3s;
+}
+.nav-menu button:hover { color: var(--orange); }
+
+/* Страницы */
+.page { display: none; padding-top: 120px; min-height: 100vh; animation: fadeIn 0.4s; }
+.page.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Главная */
+.hero-section { height: 80vh; display: flex; align-items: center; position: relative; }
+.hero-bg-gradient {
+    position: absolute; top:0; left:0; width:100%; height:100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255,102,0,0.15) 0%, transparent 70%);
+}
+h1 { font-size: 70px; font-weight: 900; line-height: 1; margin: 0; }
+.orange-text { color: var(--orange); text-shadow: 0 0 20px rgba(255,102,0,0.4); }
+.hero-sub { font-size: 20px; color: #888; margin: 25px 0; max-width: 600px; }
+
+/* Кнопки */
+.btn-mega {
+    background: linear-gradient(90deg, var(--orange), var(--yellow));
+    border: none; padding: 20px 40px; border-radius: 50px;
+    font-weight: 900; cursor: pointer; transition: 0.3s;
+}
+.btn-mega:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(255,102,0,0.5); }
+
+/* Цены */
+.price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+.price-item { background: var(--dark); padding: 40px; border-radius: 30px; border: 1px solid #222; }
+.price-item.active { border-color: var(--orange); }
+.price-header { font-size: 30px; color: var(--orange); margin-bottom: 20px; font-weight: 900; }
+.row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #222; }
+
+/* Слайдер */
+.reviews-slider-container { overflow: hidden; white-space: nowrap; padding: 40px 0; }
+.reviews-track { display: inline-flex; gap: 20px; animation: scroll 40s linear infinite; }
+.review-card {
+    min-width: 350px; background: var(--dark); padding: 30px; 
+    border-radius: 20px; white-space: normal; border-left: 4px solid var(--orange);
+}
+@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* Модалка */
+.modal-overlay {
+    position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.9);
+    display: none; align-items: center; justify-content: center; z-index: 2000;
+}
+.modal-content { background: var(--dark); padding: 40px; border-radius: 30px; width: 400px; text-align: center; border: 1px solid var(--orange); }
+.m-input { width: 100%; padding: 15px; margin-bottom: 15px; background: #000; border: 1px solid #333; color: white; border-radius: 10px; }
+.btn-close { background: none; border: none; color: #555; cursor: pointer; margin-top: 10px; }
