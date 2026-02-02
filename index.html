@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEZDRY PRO — Уничтожение вредителей</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;600;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+<div class="container nav-inner">
+<div class="logo" onclick="showPage('home')">
+<span class="logo-accent">DEZ</span>DRY
+</div>
+<nav class="nav-menu">
+<button onclick="showPage('home')">Главная</button>
+<button onclick="showPage('prices')">Цены</button>
+<button onclick="showPage('reviews-page')">Отзывы</button>
+<button onclick="showPage('contacts')">Контакты</button>
+</nav>
+<div class="header-socials">
+<a href="https://t.me/" target="_blank" class="app-btn tg">Telegram</a>
+<a href="https://wa.me/" target="_blank" class="app-btn wa">WhatsApp</a>
+</div>
+</div>
+</header>
+
+<main id="page-home" class="page active">
+<section class="hero-section">
+<div class="hero-bg-gradient"></div>
+<div class="container">
+<div class="hero-content">
+<div class="status-pill">● Работаем 24/7 Москва и МО</div>
+<h1>СМЕРТЬ <span class="orange-text">ТАРАКАНАМ</span> <br>& КЛОПАМ</h1>
+<p class="hero-sub">Профессиональная дезинфекция. Гарантия по договору 3 года. Выезд мастера в течение 30 минут.</p>
+<button class="btn-mega" onclick="showPage('prices')">УЗНАТЬ СТОИМОСТЬ</button>
+<div class="trust-icons">
+<span>🚫🪳</span> <span>🚫🐀</span> <span>🚫🦟</span> <span>🚫🐜</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<main id="page-prices" class="page">
+<section class="container">
+<h2 class="title-l">Прайс-лист услуг</h2>
+<div class="price-grid">
+<div class="price-item active">
+<div class="price-header">Дезинсекция</div>
+<div class="price-body">
+<div class="row"><span>Комната</span> <b>1 500 ₽</b></div>
+<div class="row"><span>1-к квартира</span> <b>2 000 ₽</b></div>
+<div class="row"><span>2-к квартира</span> <b>2 500 ₽</b></div>
+<button class="btn-order" onclick="openOrderModal('Дезинсекция')">Заказать</button>
+</div>
+</div>
+<div class="price-item">
+<div class="price-header">Дератизация</div>
+<div class="price-body">
+<div class="row"><span>Частный дом</span> <b>3 500 ₽</b></div>
+<div class="row"><span>Склад / Офис</span> <b>от 5 000 ₽</b></div>
+<button class="btn-order" onclick="openOrderModal('Дератизация')">Заказать</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<main id="page-reviews-page" class="page">
+<section class="container">
+<h2 class="title-l">Отзывы клиентов (15)</h2>
+<div class="reviews-slider-container">
+<div class="reviews-track" id="reviews-track">
+</div>
+</div>
+</section>
+</main>
+
+<main id="page-contacts" class="page">
+<section class="container">
+<div class="contact-card">
+<h2>Наши контакты</h2>
+<div class="phone-big">+7 (939) 112-43-08</div>
+<div class="contact-apps">
+<a href="#" class="app-card wa">WhatsApp</a>
+<a href="#" class="app-card tg">Telegram</a>
+</div>
+</div>
+</section>
+</main>
+
+<div class="modal-overlay" id="orderModal">
+<div class="modal-content">
+<div id="order-form-step">
+<h3>Оформление заказа</h3>
+<p id="selected-service-name"></p>
+<input type="text" id="area" placeholder="Площадь помещения" class="m-input">
+<input type="datetime-local" id="time" class="m-input">
+<input type="tel" id="phone" placeholder="Ваш телефон" class="m-input">
+<button class="btn-mega" onclick="submitFinalOrder()">ОТПРАВИТЬ</button>
+<button class="btn-close" onclick="closeOrderModal()">Закрыть</button>
+</div>
+<div id="order-success-step" style="display:none">
+<h2 style="color:var(--orange)">ЗАЯВКА ПРИНЯТА!</h2>
+<p>Рассмотрим вашу заявку и ответим в ближайшее время.</p>
+<button class="btn-mega" onclick="closeOrderModal()">ОТЛИЧНО</button>
+</div>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
